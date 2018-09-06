@@ -1,4 +1,6 @@
-#Fork from https://github.com/qqwweee/keras-yolo3
+# Fork from https://github.com/qqwweee/keras-yolo3
+add test_calc_ap.py
+add NWPU_train
 
 ***
 
