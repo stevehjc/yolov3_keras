@@ -27,6 +27,7 @@ def save_gt_pkl(test_path):
     gt_file="output/gt.pkl"
     with open(gt_file, 'wb') as f:
         pickle.dump(all_boxes_gt, f, pickle.HIGHEST_PROTOCOL)
+        print("save output/gt.pkl")
 
 
 def save_test_pkl(test_path):
@@ -49,7 +50,7 @@ def save_test_pkl(test_path):
         tic=time.time()
         out_boxes,out_scores,out_classes=yolo.detect_image_result(im)
         toc=time.time()
-        print("detection time:",toc-tic)
+        print("{}/{}detection time:{}".format(i,len(lines),toc-tic))
 
         for j,cls_ in enumerate(out_classes):
             # 注意测试结果中的box坐标顺序
@@ -67,6 +68,7 @@ def save_test_pkl(test_path):
     det_file="output/detections.pkl"
     with open(det_file, 'wb') as f:
         pickle.dump(all_boxes, f, pickle.HIGHEST_PROTOCOL)
+        print("save output/detections.pkl")
     
 
 #计算AP
@@ -148,8 +150,10 @@ def calc_ap():
     print("mAP",ap_all.mean())
 
 if __name__=="__main__":
+    test_path="NWPU_train.txt"
+    #检测
+    save_test_pkl(test_path)
+    #计算AP
     calc_ap()
-    # test_path="NWPU_train.txt"
-    # save_test_pkl(test_path)
     print("")
 

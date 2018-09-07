@@ -1,6 +1,14 @@
-# Fork from https://github.com/qqwweee/keras-yolo3
+## Fork from https://github.com/qqwweee/keras-yolo3
+
 add test_calc_ap.py
+
 add NWPU_train
+
+TO-DO
+- [x] 增加统计精度AP，mAP功能
+- [ ] train.py 增加命令行解析功能
+- [ ] 训练COCO
+
 
 ***
 

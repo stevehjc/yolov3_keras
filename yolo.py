@@ -20,7 +20,7 @@ from keras.utils import multi_gpu_model
 
 class YOLO(object):
     _defaults = { # 修改测试的模型路径和类别路径
-        "model_path":'logs/004/trained_weights_stage_1.h5', #'model_data/yolo.h5', #
+        "model_path":'logs/trained_weights_final.h5', #'model_data/yolo.h5', #logs/004/trained_weights_stage_1.h5
         "anchors_path": 'model_data/yolo_anchors.txt', #
         "classes_path":'model_data/nwpu_classes.txt', #'model_data/coco_classes.txt', #
         "score" : 0.3,
